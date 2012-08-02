@@ -137,10 +137,16 @@ var addToHome = (function (w) {
 				sizes = icons[i].getAttribute('sizes');
 
 				if ( sizes ) {
-					if ( isRetina && sizes == '114x114' ) {
+					if ( isRetina && !isIPad && sizes == '114x114' ) {// >=iPhone 4s 
 						touchIcon = icons[i].href;
 						break;
-					}else if(sizes == '57x57'){
+					}else if(!isRetina && !isIPad && sizes == '57x57'){// < iPhone 4s
+						touchIcon = icons[i].href;
+						break;
+					}else if(isRetina && isIPad && sizes == '144x144'){// >= new iPad
+						touchIcon = icons[i].href;
+						break;
+					}else if(!isRetina && isIPad && sizes == '72x72'){// < new iPad
 						touchIcon = icons[i].href;
 						break;
 					}
