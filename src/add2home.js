@@ -140,6 +140,9 @@ var addToHome = (function (w) {
 					if ( isRetina && sizes == '114x114' ) {
 						touchIcon = icons[i].href;
 						break;
+					}else if(sizes == '57x57'){
+						touchIcon = icons[i].href;
+						break;
 					}
 				} else {
 					touchIcon = icons[i].href;
